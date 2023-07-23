@@ -25,7 +25,10 @@ func main() {
 		sortType = sortRawDirection[0]
 	}
 
-	utils.ValidateSortType(sortType)
+	isValidSortType := utils.ValidateSortType(sortType)
+	if !isValidSortType {
+		return
+	}
 
 	numberAndStringMixedArr := args[1:]
 
