@@ -6,7 +6,7 @@ const (
 )
 
 const (
-	NUMBER string = "number"
-	STRING        = "string"
-	MIX           = "mix"
+	NUMBER string = "-number"
+	STRING        = "-string"
+	MIX           = "-mix"
 )

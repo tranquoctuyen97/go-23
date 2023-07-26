@@ -15,15 +15,7 @@ func main() {
 		return
 	}
 
-	sortRawDirection := strings.Split(args[0], "-")
-	var sortOrder = contants.ASC
-	var sortType string
-	if len(sortRawDirection) == 2 {
-		sortType = sortRawDirection[1]
-		sortOrder = utils.DetectSortOrder("-")
-	} else {
-		sortType = sortRawDirection[0]
-	}
+	sortType := args[0]
 
 	isValidSortType := utils.ValidateSortType(sortType)
 	if !isValidSortType {
@@ -51,8 +43,8 @@ func main() {
 	needSortNumbers := utils.GetListNumberFromSlice(numberAndStringMixedArr)
 	needSortStrings := utils.GetListStringFromSlice(numberAndStringMixedArr)
 
-	utils.SortListStringBySortOrder(needSortStrings, sortOrder)
-	utils.SortListNumberBySortOrder(needSortNumbers, sortOrder)
+	utils.SortListStringBySortOrder(needSortStrings)
+	utils.SortListNumberBySortOrder(needSortNumbers)
 
 	convertedNumbers := utils.ConvertListFloatToString(needSortNumbers)
 
